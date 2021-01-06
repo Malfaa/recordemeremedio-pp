@@ -1,65 +1,275 @@
-import Head from 'next/head'
 import styles from '../styles/Home.module.css'
+import Head from 'next/head'
+import Image from 'next/image'
+import Link from 'next/link'
+import React from 'react'
+import theme from '../src/theme'
+import AvatarMeu from '../src/avatarMeu'
+import {Container, Typography, Box, Avatar, makeStyles, useMediaQuery, Switch,
+  Paper,Grow, GridList, GridListTile, GridListTileBar,Tooltip, Accordion,
+  AccordionSummary, AccordionDetails}
+from '@material-ui/core'
 
-export default function Home() {
+function Home(){
+
+  const useEstilos = makeStyles((theme)=>({
+    categoriaCentral:{
+      background: 'linear-gradient(45deg, #a66bfe 30%, #d2fff6 90%)',//FF8E53  a66bfe
+      padding: '0 30px',
+      borderRadius: 5,
+    },
+    mainSectionInfo:{
+      border: "2px",
+      borderStyle: 'solid',
+      float: 'right',
+      margin: '1px',
+      padding: '1px',
+      backgroundColor: 'grey',
+      borderRadius: '10px',
+      width: '69%',
+      [theme.breakpoints.down("sm")]:{
+        width : '99%',
+        float: 'none'
+
+      }
+    },
+    mainProfileInfo:{
+      backgroundColor: '#d2fff6',
+      padding: '20px',
+      float: 'left',
+      border: '2px solid',
+      borderRadius: '10px',
+      borderStyle: 'solid',
+      [theme.breakpoints.down('sm')]:{
+        width : '99%',
+        float: 'none',
+        alignItems: 'flex-start',
+        marginBottom:'4px'
+      }
+    },
+    secaoProjetos:{
+      padding: '10px',
+      margin: '15px',
+      backgroundColor: 'white',
+      display: 'flex',
+      borderRadius: '5px',
+      border: '0px',
+      height: '210px',
+
+    },
+    mainBlock:{
+      padding:'30px',
+      background: '#e7e5ec',
+      overflow:'hidden',
+      height:'100%',
+    },
+    projetos:{
+      width: '100%',
+      minHeight: '180px',
+      minWidth: '150px',
+      overflow: 'hidden',
+      height: '100% !important',
+      '&:hover':{
+        borderStyle:'solid',
+        borderColor:'#8ee9e0',
+        border:'3px',
+      },
+      [theme.breakpoints.down('sm')]:{
+        minHeight: '150px',
+      }
+    },
+    dropbox:{
+      backgroundColor:'#e0ecea',
+      borderRadius:'10px',
+      margin:'2px',
+      padding: '3px'
+    },
+    gridList:{
+      flexWrap:'nowrap',
+      spacing: 3,
+      height: '100%',
+      width: 'inherit'
+    },
+    titleBar: {
+      background:
+        'linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)',
+      },
+    small:{
+      width: theme.spacing(3),
+      height: theme.spacing(3),
+      float: 'left',
+      marginRight: '10px',
+      backgroundColor: 'white',
+      },
+    cabecalho: {
+      fontSize: 15,
+      fontWeight: 500,
+  },
+    gridListIcone:{
+      spacing: 2,
+      minWidth: '25px',
+      overflow: 'hidden',
+      minHeight: '25px',
+      height: '100% !important',
+      width: '29px !important',
+    },
+
+  }))
+  // TODO: Colocar mais projetos!
+  // TODO: Mudar o Sobre
+  const classes = useEstilos();
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+  <Container  className={classes.mainBlock} maxWidth={false}>
+    <Box className={classes.mainProfileInfo} width='30%' >
+      <Box my={1}>
+        <Typography variant='h3' align= 'center'>
+        <AvatarMeu/>
+          Gustavo Malfa Corrêa
+        </Typography>
+        <br/><br/><br/>
+        <Box>
+          <Accordion className={classes.dropbox}>
+              <AccordionSummary>
+                <Typography className={classes.cabecalho}>Ojetivo Deste Site:</Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <Typography variant='subtitle1' paragraph= 'true'>
+                &emsp;Esse site tem como objetivo uma forma de mostrar os projetos que criei ao longo
+                do meu desenvolvimento como programador, é um simples Portfolio.<br/>
+                &emsp;Viso aprender de tudo um pouco, gosto de aprender/entender novas tecnoligias e poder crescer nelas de alguma forma!
+                Seja desenvolvendo um simples projeto ou algo mais complexo.
+                </Typography>
+              </AccordionDetails>
+          </Accordion>
+            <br/>
+          <Accordion className={classes.dropbox}>
+                <AccordionSummary>
+                  <Typography className={classes.cabecalho}>Porque deste site? </Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+                  <Typography variant='subtitle1' paragraph= 'true'>
+                  &emsp;Eu pensei em criar esse Portfolio para meus projetos criados até o momento.<br/>
+                  &emsp;É uma forma dinâmica de apresenta-los e na criação consigo aprender novas ferramentas.
+                  </Typography>
+                </AccordionDetails>
+              </Accordion>
+              <br/>
+              <Accordion className={classes.dropbox}>
+                <AccordionSummary>
+                  <Typography className={classes.cabecalho}>Sobre:</Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+                  <Typography variant='subtitle1' paragraph= 'true'>
+                    <li>aasd</li><br/>
+                    <li>Site criado com React usando framework Next.JS e API Material-UI.</li><br/> <li>Hospedagem
+                    no próprio servidor da Vercel.</li>
+                  </Typography>
+                </AccordionDetails>
+          </Accordion>
+        </Box>
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
+        <br/><br/><br/>
 
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
+        <GridList className={classes.gridList}>
+          <Tooltip title='Git Projeto'>
+            <GridListTile className= {classes.gridListIcone}>
+              <Link href='https://github.com/Malfaa/web_portfolio'>
+                <Avatar src='https://www.flaticon.com/svg/static/icons/svg/38/38401.svg'
+                variant='square' className={classes.small}/>
+              </Link>
+            </GridListTile>
+          </Tooltip>
 
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
+          <br/>
 
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
+          <Tooltip title='LinkedIn'>
+            <GridListTile className= {classes.gridListIcone}>
+              <Link href='https://github.com/Malfaa/web_portfolio'>
+                <Avatar src='https://tinyurl.com/yxg9o4b4'
+                variant='square' className={classes.small}/>
+              </Link>
+            </GridListTile>
+          </Tooltip>
 
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
+          <br/>
 
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
-  )
-}
+          <Tooltip title='Facebook'>
+            <GridListTile className= {classes.gridListIcone}>
+              <Link href='https://www.facebook.com/gustavo.malfa'>
+                <Avatar src='https://tny.im/XTED'
+                variant='square' className={classes.small}/>
+              </Link>
+            </GridListTile>
+          </Tooltip>
+        </GridList>
+
+
+      </Box>
+    </Box>
+
+    <Box className={classes.mainSectionInfo} width = '69%'>
+      <Typography className={classes.categoriaCentral} variant='h4'
+      display='block' align='center'>
+        Android
+      </Typography>
+      <Box className={classes.secaoProjetos}>
+        <GridList className={classes.gridList}>
+          <Tooltip title= 'Simulador de Venda por App'>
+            <GridListTile className={classes.projetos}>
+              <Link href='https://malfaa.github.io/Android-GasAgua/'>
+                <Image src='/GasAguaPrincipal.jpeg' height={190} width={150} />
+              </Link>
+              <GridListTileBar title={'App_Venda'} classes={classes.titleBar}/>
+            </GridListTile>
+          </Tooltip>
+        </GridList>
+      </Box>
+
+      <Typography className={classes.categoriaCentral}variant='h4'
+      display='block' align='center'>
+        Java (Desktop)
+      </Typography>
+      <Box className={classes.secaoProjetos}>
+        <GridList width={400} className={classes.gridList} cols={2.5}>
+          <Tooltip title='@'>
+            <GridListTile className={classes.projetos}>
+              <Link href='https://github.com/Malfaa/APS-Casthor'>
+                <Image src='/GasAguaPrincipal.jpeg' width={150} height={190} alt='Casthor-Game Ambiental'/>
+              </Link>
+              <GridListTileBar title={'Casthor-Game Ambiental'} classes={classes.titleBar}/>
+            </GridListTile>
+          </Tooltip>
+
+          <Tooltip title='@'>
+            <GridListTile className={classes.projetos}>
+              <Link href='https://material-ui.com/pt/components/transitions/'>
+                <Image src='/GasAguaIndex.jpeg' width={150} height={190} alt='Casthor-Game Ambiental'/>
+              </Link>
+              <GridListTileBar title={'Castor'} className={classes.titleBar}/>
+            </GridListTile>
+          </Tooltip>
+        </GridList>
+      </Box>
+
+      <Typography className={classes.categoriaCentral}variant='h4'
+      display='block' align='center'>
+        Web
+      </Typography>
+      <Box className={classes.secaoProjetos}>
+        <Tooltip title='@'>
+          <GridList className={classes.gridList} cols={1}>
+            <GridListTile className={classes.projetos}>
+              <Link href='https://todo-clone-d1e70.web.app/'>
+                <Image src='/todolist.png' width={150} height={100} />
+              </Link>
+              <GridListTileBar title={'TODO List'} className={classes.titleBar}/>
+            </GridListTile>
+          </GridList>
+        </Tooltip>
+      </Box>
+    </Box>
+  </Container>
+)}
+
+export default Home
