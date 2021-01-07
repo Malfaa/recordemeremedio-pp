@@ -134,13 +134,13 @@ function Home(){
         <Box>
           <Accordion className={classes.dropbox}>
               <AccordionSummary>
-                <Typography className={classes.cabecalho}>Ojetivo Deste Site:</Typography>
+                <Typography className={classes.cabecalho}>Objetivo Deste Site:</Typography>
               </AccordionSummary>
               <AccordionDetails>
                 <Typography variant='subtitle1' paragraph= 'true'>
                 &emsp;Esse site tem como objetivo uma forma de mostrar os projetos que criei ao longo
                 do meu desenvolvimento como programador, é um simples Portfolio.<br/>
-                &emsp;Viso aprender de tudo um pouco, gosto de aprender/entender novas tecnoligias e poder crescer nelas de alguma forma!
+                &emsp;Viso aprender de tudo um pouco, gosto de aprender/entender novas tecnologias e poder crescer nelas de alguma forma!
                 Seja desenvolvendo um simples projeto ou algo mais complexo.
                 </Typography>
               </AccordionDetails>
@@ -164,9 +164,9 @@ function Home(){
                 </AccordionSummary>
                 <AccordionDetails>
                   <Typography variant='subtitle1' paragraph= 'true'>
-                    <li>aasd</li><br/>
-                    <li>Site criado com React usando framework Next.JS e API Material-UI.</li><br/> <li>Hospedagem
-                    no próprio servidor da Vercel.</li>
+                    <li>Site criado com React usando framework Next.JS e 
+                    API Material-UI.</li><br/>
+                    <li>Hospedagem no próprio servidor da Vercel.</li>
                   </Typography>
                 </AccordionDetails>
           </Accordion>
@@ -177,7 +177,7 @@ function Home(){
         <GridList className={classes.gridList}>
           <Tooltip title='Git Projeto'>
             <GridListTile className= {classes.gridListIcone}>
-              <Link href='https://github.com/Malfaa/web_portfolio'>
+              <Link href='https://github.com/Malfaa/web-portfolio'>
                 <Avatar src='https://www.flaticon.com/svg/static/icons/svg/38/38401.svg'
                 variant='square' className={classes.small}/>
               </Link>
@@ -188,8 +188,8 @@ function Home(){
 
           <Tooltip title='LinkedIn'>
             <GridListTile className= {classes.gridListIcone}>
-              <Link href='https://github.com/Malfaa/web_portfolio'>
-                <Avatar src='https://tinyurl.com/yxg9o4b4'
+              <Link href='https://www.linkedin.com/in/gustavo-malfa-corr%C3%AAa-a581b21a5/'>
+                <Avatar src='https://cutt.ly/3jjdpcE'
                 variant='square' className={classes.small}/>
               </Link>
             </GridListTile>
@@ -200,7 +200,7 @@ function Home(){
           <Tooltip title='Facebook'>
             <GridListTile className= {classes.gridListIcone}>
               <Link href='https://www.facebook.com/gustavo.malfa'>
-                <Avatar src='https://tny.im/XTED'
+                <Avatar src='https://cutt.ly/0jjs68X'
                 variant='square' className={classes.small}/>
               </Link>
             </GridListTile>
@@ -235,23 +235,15 @@ function Home(){
       </Typography>
       <Box className={classes.secaoProjetos}>
         <GridList width={400} className={classes.gridList} cols={2.5}>
-          <Tooltip title='@'>
+          <Tooltip title='Casthor-Game Ambiental'>
             <GridListTile className={classes.projetos}>
               <Link href='https://github.com/Malfaa/APS-Casthor'>
-                <Image src='/GasAguaPrincipal.jpeg' width={150} height={190} alt='Casthor-Game Ambiental'/>
+                <Image src='/casthor.png' width={150} height={190} alt='Casthor-Game Ambiental'/>
               </Link>
-              <GridListTileBar title={'Casthor-Game Ambiental'} classes={classes.titleBar}/>
+              <GridListTileBar title={'Game Ambiental'} classes={classes.titleBar}/>
             </GridListTile>
           </Tooltip>
 
-          <Tooltip title='@'>
-            <GridListTile className={classes.projetos}>
-              <Link href='https://material-ui.com/pt/components/transitions/'>
-                <Image src='/GasAguaIndex.jpeg' width={150} height={190} alt='Casthor-Game Ambiental'/>
-              </Link>
-              <GridListTileBar title={'Castor'} className={classes.titleBar}/>
-            </GridListTile>
-          </Tooltip>
         </GridList>
       </Box>
 
@@ -260,7 +252,7 @@ function Home(){
         Web
       </Typography>
       <Box className={classes.secaoProjetos}>
-        <Tooltip title='@'>
+        <Tooltip title='TO-DO'>
           <GridList className={classes.gridList} cols={1}>
             <GridListTile className={classes.projetos}>
               <Link href='https://todo-clone-d1e70.web.app/'>
