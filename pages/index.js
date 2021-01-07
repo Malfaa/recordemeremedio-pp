@@ -119,8 +119,11 @@ function Home(){
   // TODO: Mudar o Sobre
   const classes = useEstilos();
   return (
-
-  <Container  className={classes.mainBlock} maxWidth={false}>
+  <Container className={classes.mainBlock} maxWidth={false}>
+    <Head>
+        <title>📝Gustavo Portfolio</title>
+        <meta charSet="utf-8" />
+    </Head>
     <Box className={classes.mainProfileInfo} width='30%' >
       <Box my={1}>
         <Typography variant='h3' align= 'center'>
