@@ -164,7 +164,7 @@ function Home(){
                 </AccordionSummary>
                 <AccordionDetails>
                   <Typography variant='subtitle1' paragraph= 'true'>
-                    <li>Site criado com React usando framework Next.JS e 
+                    <li>Site criado com React usando framework Next.JS e
                     API Material-UI.</li><br/>
                     <li>Hospedagem no próprio servidor da Vercel.</li>
                   </Typography>

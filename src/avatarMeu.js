@@ -14,7 +14,7 @@ function avatarMeu() {
   const classes = useEstilos();
 
   return(
-    <Avatar alt='Gustavo Malfa Correa' src='/fred.jpeg'
+    <Avatar alt='Gustavo Malfa Correa' src='/gumalfa.jpg'
     className={classes.large}/>
   )
 }
